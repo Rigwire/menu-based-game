@@ -36,7 +36,7 @@ int main() {
 	switch (decision)	//IF THE PLAYER DECIDES TO PLAY, GameLoop() IS CALLED OR ELSE THE PROGRAM ENDS
 	{
 	case 1:
-		GameLoop(); // THIS IS DEFINED IN THE handlers.cpp FILE
+		GameLoop(); // THIS IS DEFINED IN THE loop.cpp FILE
 		break;
 
 	case 2:
