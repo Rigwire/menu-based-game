@@ -7,14 +7,18 @@
 
 int EntityAttack(Entity& attacker, Entity& defender)
 {
-	defender.m_health = defender.m_defense / attacker.m_attack;
+	float defense = 1.0f - static_cast<float>(defender.m_defense) / 10.0f;
+
+	defender.m_health -= static_cast <float>(attacker.m_attack) * defense;
 
 	return 0;
 }
 
 int EntityMagic(Entity& attacker, Entity& defender)
 {
-	defender.m_health = defender.m_defense / attacker.m_magic;
+	float defense = 1.0f - static_cast<float>(defender.m_defense) / 10.0f;
+
+	defender.m_health -= static_cast <float>(attacker.m_magic) * defense;
 
 	return 0;
 }
@@ -23,7 +27,7 @@ int EntityMagic(Entity& attacker, Entity& defender)
 
 void EnemyHandler(Entity& enemyAttacker, Entity& playerDefender)	
 {
-	std::cout << enemyAttacker.m_name << ": " << playerDefender.m_health
+	std::cout << enemyAttacker.m_name << ": " << enemyAttacker.m_health
 		<< "\t" << playerDefender.m_name << ": " << playerDefender.m_health << "\n";
 
 	std::random_device rd;
