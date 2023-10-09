@@ -21,10 +21,7 @@
     <ClCompile Include="src\loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\globals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\EnemyLogic.cpp">
+    <ClCompile Include="src\EntityLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +29,10 @@
     <ClInclude Include="src\headers\loop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\headers\globals.h">
+    <ClInclude Include="src\headers\EntityLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\headers\EnemyLogic.h">
+    <ClInclude Include="src\headers\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

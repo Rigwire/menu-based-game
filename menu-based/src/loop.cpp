@@ -1,38 +1,54 @@
 #include <iostream>
 #include <stdlib.h>
 #include <random>
-#include "headers/globals.h"
+#include "headers/World.h"
+#include "headers/EntityLogic.h"
 
 
-// GameLoop() ASKS WHO THE PLAYER WANTS TO FIGHT AND SETS THE STATE TO THAT ENEMY
-
-void GameLoop() 
+void GameLoop(World& world) 
 {
+
+	bool gameOver = false;
+	bool continueCombat = true;
+
 	std::cout << "Who would you like to fight?\n\n1. Wizard\n\n2. Monster\n\n3. Ogre\n>";
 
 	int enemyDecision;
 	std::cin >> enemyDecision;
 	Enemy enemyDecisionThrow = static_cast<Enemy>(enemyDecision);
 
-
-
-	// HAD NO IDEA HOW TO ACTUALLY IMPLEMENT THE STATE TO MAKE YOU FIGHT THE ENEMY YOU CHOOSE HEHE
-	// BUT IT'S SUPPOSED TO CALL EntityHandler() IN EACH CASE 
-	// EntityHandler() IS DEFINED IN EnemyLogic.cpp
-	switch (enemyDecisionThrow)
+	
+	while (continueCombat)
 	{
-	case Enemy::WIZARD:
-		
-		break;
+		switch (enemyDecisionThrow)
+		{
+		case Enemy::WIZARD:
+			PlayerHandler(world.player, world.wizard);
 
-	case Enemy::MONSTER:
-		break;
+			EnemyHandler(world.wizard, world.player);
 
-	case Enemy::OGRE:
-		break;
+			continueCombat = world.wizard.m_health > 0 && world.player.m_health > 0;
+			break;
 
-	default:
-		break;
+		case Enemy::MONSTER:
+			PlayerHandler(world.player, world.monster);
+
+			EnemyHandler(world.monster, world.player);
+
+			continueCombat = world.monster.m_health > 0 && world.player.m_health > 0;
+			break;
+
+		case Enemy::OGRE:
+			PlayerHandler(world.player, world.ogre);
+
+			EnemyHandler(world.ogre, world.player);
+
+			continueCombat = world.ogre.m_health > 0 && world.player.m_health > 0;
+			break;
+
+		default:
+			break;
+		}
 	}
 }
 

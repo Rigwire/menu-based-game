@@ -131,15 +131,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\EnemyLogic.cpp" />
-    <ClCompile Include="src\globals.cpp" />
+    <ClCompile Include="src\EntityLogic.cpp" />
     <ClCompile Include="src\loop.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\headers\EnemyLogic.h" />
-    <ClInclude Include="src\headers\globals.h" />
+    <ClInclude Include="src\headers\EntityLogic.h" />
     <ClInclude Include="src\headers\loop.h" />
+    <ClInclude Include="src\headers\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

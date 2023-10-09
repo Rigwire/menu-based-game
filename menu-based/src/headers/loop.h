@@ -1,3 +1,4 @@
 #pragma once
+#include "World.h"
 
-void GameLoop();
+void GameLoop(World& world);
