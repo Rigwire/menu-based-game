@@ -19,17 +19,17 @@ int main() {
 
 	
 
-	std::cout << "Welcome to Eclaria!\n\n";			
+	std::cout << "Welcome to Eclaria!\n\n";
 																				
 	int decision;
 
 	std::cout << "What would you like to do? \n\n1. Play\n\n2. Exit\n";		// THIS CODE BLOCK ASKS THE PLAYER IF THEY WANT TO PLAY OR EXIT THE GAME
 	std::cin >> decision;
 
-	switch (decision)	//IF THE PLAYER DECIDES TO PLAY, GameLoop() IS CALLED OR ELSE THE PROGRAM ENDS
+	switch (decision)
 	{
 	case 1:
-		GameLoop(gameWorld); // THIS IS DEFINED IN THE handlers.cpp FILE
+		GameLoop(gameWorld);
 		break;
 
 	case 2:

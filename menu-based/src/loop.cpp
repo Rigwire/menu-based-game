@@ -49,6 +49,7 @@ void GameLoop(World& world)
 		default:
 			break;
 		}
+		
 	}
 }
 
